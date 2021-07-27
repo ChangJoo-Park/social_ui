@@ -8,6 +8,7 @@ class UserRecommendList extends StatefulWidget {
     required this.userAvatarUrls,
     required this.usernames,
     this.canAdd = true,
+    this.isWide = false,
     this.onUserTap,
     this.onAddTap,
   })  : assert(userAvatarUrls.length == usernames.length),
@@ -16,6 +17,7 @@ class UserRecommendList extends StatefulWidget {
   final List<String> userAvatarUrls;
   final List<String> usernames;
   final bool canAdd;
+  final bool isWide;
   final VoidCallback? onUserTap;
   final VoidCallback? onAddTap;
 
@@ -26,8 +28,13 @@ class UserRecommendList extends StatefulWidget {
 class _UserRecommendListState extends State<UserRecommendList> {
   @override
   Widget build(BuildContext context) {
+    final double width = widget.isWide ? 100 : 60;
+    final double height = widget.isWide ? 90.0 : 70.0;
+    final double imageWidth = widget.isWide ? 90 : 48;
+    final double imageHeight = widget.isWide ? 65 : 48;
+
     return Container(
-      height: 70,
+      height: height,
       child: ListView(
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
@@ -36,8 +43,8 @@ class _UserRecommendListState extends State<UserRecommendList> {
             GestureDetector(
               onTap: widget.onUserTap,
               child: Container(
-                width: 60,
-                height: 70,
+                width: width,
+                height: height,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -58,20 +65,22 @@ class _UserRecommendListState extends State<UserRecommendList> {
             GestureDetector(
               onTap: widget.onUserTap,
               child: Container(
-                width: 60,
-                height: 70,
+                width: width,
+                height: height,
                 child: Column(
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: CachedNetworkImage(
                         imageUrl: widget.userAvatarUrls[i],
-                        width: 48,
-                        height: 48,
+                        fit: BoxFit.cover,
+                        alignment: Alignment.center,
+                        width: imageWidth,
+                        height: imageHeight,
                       ),
                     ),
                     Container(
-                      width: 60,
+                      width: imageWidth,
                       child: Text(
                         widget.usernames[i],
                         overflow: TextOverflow.ellipsis,
