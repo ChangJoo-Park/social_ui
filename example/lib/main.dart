@@ -30,12 +30,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int tabSelected = 0;
   @override
   Widget build(BuildContext context) {
-    var myChatTextColor;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.ac_unit))],
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: ListView(
         children: [
           // // Heading
