@@ -41,7 +41,7 @@ class SocialUiTheme {
           fontFamily: fontFamily,
         ),
         subtitle1: TextStyle(
-          color: SocialUiColor.grey,
+          color: SocialUiColor.black.withOpacity(0.8),
           fontFamily: fontFamily,
         ),
         subtitle2: TextStyle(

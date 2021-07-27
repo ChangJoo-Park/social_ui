@@ -369,6 +369,28 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SizedBox(height: 16),
           UserRecommendList(
+            canAdd: true,
+            isWide: true,
+            userAvatarUrls: [
+              'https://cdn.dribbble.com/users/1080850/avatars/small/008a7bf29fecec095ebed3bc1311be28.jpeg?1590090724',
+              'https://cdn.dribbble.com/users/2146089/avatars/small/43ed31011fcd105632c475ff59093ce1.png?1539681430',
+              'https://cdn.dribbble.com/users/1624253/avatars/small/9554935ce7f2064505ede2fe034484a5.jpg?1607746549',
+              'https://cdn.dribbble.com/users/1498088/avatars/small/23da31656baae108381f4b731bf9aac7.png?1547015783',
+              'https://cdn.dribbble.com/users/295355/avatars/small/fd69980456acc1b3a5f2a2fde1fa0d68.jpg?1542632080',
+              'https://cdn.dribbble.com/users/1465253/avatars/small/6f8d825f885632a7dcbcfd396dcf20cd.jpg?1615328016',
+              'https://cdn.dribbble.com/users/4883203/avatars/normal/0288bf8952cec52d121bffceec78a1cb.jpg?1597378936',
+            ],
+            usernames: [
+              'Julia Shagofferova',
+              'Afterglow',
+              'Zaini Achmad',
+              'rainfall',
+              'Jordan Jenkins',
+              'Alex Delker',
+              'Yogyakarta'
+            ],
+          ),
+          UserRecommendList(
             canAdd: false,
             isWide: true,
             userAvatarUrls: [
@@ -426,6 +448,11 @@ class _MyHomePageState extends State<MyHomePage> {
             trailing: '8.200',
             imageUrl:
                 'https://cdn.dribbble.com/users/1881653/avatars/small/8bb6b2233fb9460194a52f1e31130e4a.jpg?1532343967',
+          ),
+          SectionHeader(title: 'NOTICE LIST'),
+          ListTile(
+            title: Text('7월 21일 서비스 개선 점검 안내'),
+            onTap: () {},
           ),
         ],
       ),
