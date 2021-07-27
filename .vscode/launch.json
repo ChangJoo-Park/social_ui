@@ -19,14 +19,15 @@
       "name": "example",
       "cwd": "example",
       "request": "launch",
-      "type": "dart",
+      "type": "dart"
     },
     {
       "name": "example (profile mode)",
       "cwd": "example",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "profile"
+      "flutterMode": "profile",
+      "deviceId": "chrome"
     }
   ]
 }
