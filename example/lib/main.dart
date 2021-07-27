@@ -463,6 +463,96 @@ class _MyHomePageState extends State<MyHomePage> {
             title: Text('lofi type beat • 3 hours',
                 style: Theme.of(context).textTheme.subtitle1),
           ),
+          SectionHeader(title: 'SELECTABLE AVATAR LIST ITEM'),
+          SelectableAvatarListItem(
+            imageUrl:
+                'https://cdn.dribbble.com/users/2988193/avatars/small/e635f5ca034b26910e38553da7985c20.jpg?1574592016',
+          ),
+          SelectableAvatarListItem(
+            imageUrl:
+                'https://cdn.dribbble.com/users/5554868/avatars/normal/open-uri20200621-3688-1kiiq3h?1592775898',
+            selected: true,
+          ),
+          Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SelectableAvatarListItem(
+                  imageUrl:
+                      'https://cdn.dribbble.com/users/4238475/avatars/normal/494a1cc64d69aa961a9bfcbe456a02b5.jpeg?1622440033',
+                  selected: true,
+                ),
+                Container(
+                    child: Text('Rinaldo',
+                        style: Theme.of(context).textTheme.subtitle1))
+              ],
+            ),
+          ),
+          Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SelectableAvatarListItem(
+                  imageUrl:
+                      'https://cdn.dribbble.com/users/3480894/avatars/normal/1d56cecd09a37a3cc7075f22cf2ede96.png?1625565914',
+                  selected: false,
+                ),
+                Container(
+                    child: Text('Saiduzzaman Shafie',
+                        style: Theme.of(context).textTheme.subtitle1))
+              ],
+            ),
+          ),
+          Container(
+            height: 90,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SelectableAvatarListItem(
+                    imageUrl:
+                        'https://cdn.dribbble.com/users/3480894/avatars/normal/1d56cecd09a37a3cc7075f22cf2ede96.png?1625565914',
+                    selected: true,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SelectableAvatarListItem(
+                    imageUrl:
+                        'https://cdn.dribbble.com/users/3480894/avatars/normal/1d56cecd09a37a3cc7075f22cf2ede96.png?1625565914',
+                    selected: false,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SelectableAvatarListItem(
+                    imageUrl:
+                        'https://cdn.dribbble.com/users/3480894/avatars/normal/1d56cecd09a37a3cc7075f22cf2ede96.png?1625565914',
+                    selected: false,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SelectableAvatarListItem(
+                    imageUrl:
+                        'https://cdn.dribbble.com/users/3480894/avatars/normal/1d56cecd09a37a3cc7075f22cf2ede96.png?1625565914',
+                    selected: false,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SelectableAvatarListItem(
+                    imageUrl:
+                        'https://cdn.dribbble.com/users/3480894/avatars/normal/1d56cecd09a37a3cc7075f22cf2ede96.png?1625565914',
+                    selected: false,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
