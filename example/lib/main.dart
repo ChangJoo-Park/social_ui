@@ -449,10 +449,23 @@ class _MyHomePageState extends State<MyHomePage> {
             imageUrl:
                 'https://cdn.dribbble.com/users/1881653/avatars/small/8bb6b2233fb9460194a52f1e31130e4a.jpg?1532343967',
           ),
-          SectionHeader(title: 'NOTICE LIST'),
+          SectionHeader(title: 'DEFAULT LIST'),
           ListTile(
-            title: Text('7월 21일 서비스 개선 점검 안내'),
+            title:
+                Text('Visualize Team Usage With Sophisticated Usage Dashboard'),
             onTap: () {},
+          ),
+          SectionHeader(title: 'LIST WITH IMAGE'),
+          ImageListItem(
+            imageUrl:
+                'http://wallpaperswide.com/download/avatar_3d_2009_movie_screenshot-wallpaper-1366x768.jpg',
+            title: Text('lofi type beat • 3 hours',
+                style: Theme.of(context).textTheme.subtitle1),
+          ),
+          ImageListItem(
+            imageUrl: 'https://i.ytimg.com/vi/6vT_uYwXc6c/maxresdefault.jpg',
+            title: Text('lofi type beat • 3 hours',
+                style: Theme.of(context).textTheme.subtitle1),
           ),
         ],
       ),

@@ -17,3 +17,4 @@ export 'chat_composer.dart';
 export 'user_recommend_list.dart';
 export 'rank_badge.dart';
 export 'rank_list_item.dart';
+export 'image_list_item.dart';
