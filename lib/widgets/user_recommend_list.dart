@@ -79,6 +79,7 @@ class _UserRecommendListState extends State<UserRecommendList> {
                         height: imageHeight,
                       ),
                     ),
+                    SizedBox(height: 4),
                     Container(
                       width: imageWidth,
                       child: Text(
