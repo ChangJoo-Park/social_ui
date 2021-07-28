@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:social_ui/colors.dart';
 
 class SocialUiTheme {
-  static String? fontFamily = GoogleFonts.notoSans().fontFamily;
+  static String? fontFamily;
   static double? appbarTitleFontSize = 19;
 
   static ThemeData get lightTheme {
