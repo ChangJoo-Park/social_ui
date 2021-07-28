@@ -29,20 +29,24 @@ class UserHeader extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  child: Text(
-                    username,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                  child: FittedBox(
+                    child: Text(
+                      username,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ),
                 Container(
-                  child: Text(
-                    subtitle,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 12),
+                  child: FittedBox(
+                    child: Text(
+                      subtitle,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 12),
+                    ),
                   ),
                 )
               ],
