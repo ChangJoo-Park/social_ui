@@ -408,12 +408,13 @@ class _MyHomePageState extends State<MyHomePage> {
           SectionHeader(title: 'LIST WITH IMAGE'),
           ImageListItem(
             imageUrl:
-                'http://wallpaperswide.com/download/avatar_3d_2009_movie_screenshot-wallpaper-1366x768.jpg',
+                'https://images.unsplash.com/photo-1536998003793-b13c28fae74b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&h=1080&q=80',
             title: Text('lofi type beat • 3 hours',
                 style: Theme.of(context).textTheme.subtitle1),
           ),
           ImageListItem(
-            imageUrl: 'https://i.ytimg.com/vi/6vT_uYwXc6c/maxresdefault.jpg',
+            imageUrl:
+                'https://images.unsplash.com/photo-1521012012373-6a85bade18da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&h=1080&q=80',
             title: Text('lofi type beat • 3 hours',
                 style: Theme.of(context).textTheme.subtitle1),
           ),
