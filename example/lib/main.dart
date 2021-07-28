@@ -28,61 +28,15 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int tabSelected = 0;
+  final formKey = GlobalKey<FormState>();
+  final checkboxKey = GlobalKey<CheckBoxFormFieldState>();
+  bool checked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(widget.title)),
       body: ListView(
         children: [
-          // // Heading
-          // Text(
-          //   'Heading 1',
-          //   style: Theme.of(context).textTheme.headline1,
-          // ),
-          // Text(
-          //   'Heading 2',
-          //   style: Theme.of(context).textTheme.headline2,
-          // ),
-          // Text(
-          //   'Heading 3',
-          //   style: Theme.of(context).textTheme.headline3,
-          // ),
-          // Text(
-          //   'Heading 4',
-          //   style: Theme.of(context).textTheme.headline4,
-          // ),
-          // Text(
-          //   'Heading 5',
-          //   style: Theme.of(context).textTheme.headline5,
-          // ),
-          // Text(
-          //   'Heading 6',
-          //   style: Theme.of(context).textTheme.headline6,
-          // ),
-          // Text(
-          //   '헤딩 1',
-          //   style: Theme.of(context).textTheme.headline1,
-          // ),
-          // Text(
-          //   '헤딩 2',
-          //   style: Theme.of(context).textTheme.headline2,
-          // ),
-          // Text(
-          //   '헤딩 3',
-          //   style: Theme.of(context).textTheme.headline3,
-          // ),
-          // Text(
-          //   '헤딩 4',
-          //   style: Theme.of(context).textTheme.headline4,
-          // ),
-          // Text(
-          //   '헤딩 5',
-          //   style: Theme.of(context).textTheme.headline5,
-          // ),
-          // Text(
-          //   '헤딩 6',
-          //   style: Theme.of(context).textTheme.headline6,
-          // ),
           SectionHeader(title: 'GROUP HEADER'),
           GroupCard(
             title: 'Manhattan Project',
@@ -552,6 +506,65 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+          ),
+          SectionHeader(title: 'CHECKBOX'),
+          Row(
+            children: [
+              CheckBoxFormField(
+                checked: false,
+                autovalidateMode: AutovalidateMode.always,
+                enabled: false,
+              ),
+              CheckBoxFormField(checked: true),
+              CheckBoxFormField(checked: false),
+            ],
+          ),
+          Form(
+            key: formKey,
+            child: Row(
+              children: [
+                CheckBoxFormField(
+                  key: checkboxKey,
+                  checked: checked,
+                  onSaved: (value) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('$value on saved')),
+                    );
+                  },
+                  enabled: true,
+                  autovalidateMode: AutovalidateMode.always,
+                ),
+                SizedBox(width: 4),
+                GestureDetector(
+                  onTap: () {
+                    setState(() => checked = !checked);
+                    checkboxKey.currentState!.didChange(checked);
+                  },
+                  child: AnimatedDefaultTextStyle(
+                    curve: Curves.fastLinearToSlowEaseIn,
+                    duration: Duration(milliseconds: 1000),
+                    style: checked
+                        ? Theme.of(context)
+                            .textTheme
+                            .bodyText1!
+                            .copyWith(color: SocialUiColor.lightGrey)
+                        : Theme.of(context)
+                            .textTheme
+                            .bodyText1!
+                            .copyWith(color: SocialUiColor.black),
+                    child: Text(
+                      'HELLO WORLD',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              formKey.currentState!.save();
+            },
+            child: Text('Submit'),
           ),
         ],
       ),
